@@ -3,9 +3,14 @@ import { Star } from "lucide-react";
 const FeedbackCard = () => {
   return (
     <div className="bg-gradient-card glow-border rounded-xl p-4">
-      <h3 className="font-semibold text-sm text-foreground mb-3 flex items-center gap-2">
-        <Star className="w-3.5 h-3.5 text-glow-warm fill-glow-warm" /> Feedback & Reviews
-      </h3>
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="font-semibold text-sm text-foreground flex items-center gap-2">
+          <Star className="w-3.5 h-3.5 text-glow-warm fill-glow-warm" /> Feedback & Reviews
+        </h3>
+        <button className="text-[11px] px-3 py-1 rounded-lg border border-border bg-secondary hover:bg-primary/20 hover:border-primary/50 text-foreground transition-all duration-200 font-medium">
+          Give Feedback
+        </button>
+      </div>
       <div className="flex items-center gap-3 mb-3">
         <span className="text-2xl font-bold text-foreground">4.8</span>
         <div className="flex gap-0.5">
