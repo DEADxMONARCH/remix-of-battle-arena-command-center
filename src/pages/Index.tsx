@@ -4,10 +4,26 @@ import RecentActivities from "@/components/RecentActivities";
 import FeedbackCard from "@/components/FeedbackCard";
 import BottomSection from "@/components/BottomSection";
 import Footer from "@/components/Footer";
+import FloatingLines from "@/components/FloatingLines";
 
 const Index = () => {
   return (
-    <div className="h-screen flex flex-col overflow-hidden bg-gradient-main">
+    <div className="h-screen flex flex-col overflow-hidden bg-background relative">
+      {/* FloatingLines Background */}
+      <div className="absolute inset-0 z-0">
+        <FloatingLines
+          enabledWaves={["top", "middle", "bottom"]}
+          lineCount={5}
+          lineDistance={5}
+          bendRadius={5}
+          bendStrength={-0.5}
+          interactive={true}
+          parallax={true}
+        />
+      </div>
+
+      {/* Content overlay */}
+      <div className="relative z-10 h-full flex flex-col overflow-hidden">
       <Navbar />
 
       <main className="flex-1 flex min-h-0 px-6 pt-4 pb-1 gap-6">
@@ -30,6 +46,7 @@ const Index = () => {
 
       <BottomSection />
       <Footer />
+      </div>
     </div>
   );
 };
